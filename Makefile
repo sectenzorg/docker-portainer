@@ -18,5 +18,5 @@ install-docker:;: '$(os)'
 port-portainer ?= 9000:9000
 install-portainer:;: '$(port-portainer)'
 	@docker volume create vol-portainer
-	@docker run -d --name Portainer --restart=always -p $(port-portainer) -v /var/run/docker.sock:/var/run/docker.sock -v vol-portainer:/data portainer/portainer
+	@docker run -d --name Portainer --restart=always -p $(port-portainer) -v /var/run/docker.sock:/var/run/docker.sock -v vol-portainer:/data portainer/portainer-ce
 	@echo "============Portainer has been Installed==============="
